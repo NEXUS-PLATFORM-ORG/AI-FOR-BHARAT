@@ -1,0 +1,28 @@
+{
+  "name": "bharat_backend",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node -r dotenv/config src/server.js",
+    "start": "node src/server.js",
+    "migrate": "node -r dotenv/config scripts/migrate.js up",
+    "migrate:status": "node -r dotenv/config scripts/migrate.js status"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.105.3",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-rate-limit": "^8.0.0",
+    "groq-sdk": "^1.1.2",
+    "jsonwebtoken": "^9.0.2",
+    "multer": "^2.1.1",
+    "pdf-parse": "^2.4.5",
+    "pg": "^8.11.5"
+  },
+  "devDependencies": {
+    "find-process": "^2.1.1"
+  }
+}
