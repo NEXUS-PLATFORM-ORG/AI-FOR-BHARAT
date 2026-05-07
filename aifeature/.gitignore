@@ -1,0 +1,328 @@
+# ══════════════════════════════════════════════════════════════════════════════
+# Document Extraction Pipeline - .gitignore
+# ══════════════════════════════════════════════════════════════════════════════
+
+# ── Environment & Secrets ────────────────────────────────────────────────────
+.env
+.env.local
+.env.*.local
+*.key
+secrets/
+config.json
+
+# API Keys (extra protection)
+*api_key*
+*API_KEY*
+*secret*
+*SECRET*
+
+# ── Python ───────────────────────────────────────────────────────────────────
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+cover/
+
+# Translations
+*.mo
+*.pot
+
+# Django stuff:
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+
+# Flask stuff:
+instance/
+.webassets-cache
+
+# Scrapy stuff:
+.scrapy
+
+# Sphinx documentation
+docs/_build/
+
+# PyBuilder
+.pybuilder/
+target/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IPython
+profile_default/
+ipython_config.py
+
+# pyenv
+.python-version
+
+# pipenv
+Pipfile.lock
+
+# poetry
+poetry.lock
+
+# pdm
+.pdm.toml
+
+# PEP 582
+__pypackages__/
+
+# Celery stuff
+celerybeat-schedule
+celerybeat.pid
+
+# SageMath parsed files
+*.sage.py
+
+# Environments
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Rope project settings
+.ropeproject
+
+# mkdocs documentation
+/site
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# pytype static type analyzer
+.pytype/
+
+# Cython debug symbols
+cython_debug/
+
+# ── Document Processing Data ──────────────────────────────────────────────────
+# Input PDFs (sensitive legal documents)
+data/input_pdfs/*.pdf
+data/input_pdfs/**/*.pdf
+
+# Output JSON (extracted sensitive data)
+data/output_json/*.json
+data/output_json/**/*.json
+
+# Debug files and logs
+data/debug/
+*.log
+logs/
+
+# Temporary processing files
+temp/
+tmp/
+*.tmp
+*.temp
+
+# OCR temporary files
+*.tiff
+*.tif
+*.png
+*.jpg
+*.jpeg
+*.bmp
+
+# ── IDE & Editor Files ────────────────────────────────────────────────────────
+# VSCode
+.vscode/
+*.code-workspace
+
+# PyCharm
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim
+*.swp
+*.swo
+*~
+
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
+
+# ── Operating System ──────────────────────────────────────────────────────────
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump
+[Dd]esktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+*.lnk
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+# ── Machine Learning Models ───────────────────────────────────────────────────
+# Downloaded models
+models/
+*.model
+*.pkl
+*.pickle
+*.joblib
+*.h5
+*.hdf5
+*.pb
+*.onnx
+*.tflite
+
+# spaCy models (large files)
+# Note: en_core_web_lg should be installed via pip, not committed
+
+# ── Backup & Archive Files ────────────────────────────────────────────────────
+*.bak
+*.backup
+*.old
+*.orig
+*.save
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.rar
+*.7z
+
+# ── Test Files ────────────────────────────────────────────────────────────────
+# Test outputs
+test_output/
+test_results/
+*.test
+
+# Sample/demo files (if they contain real data)
+samples/
+demo/
+examples/
+
+# ── Performance & Profiling ───────────────────────────────────────────────────
+*.prof
+*.profile
+.benchmarks/
+
+# ── Documentation Build ───────────────────────────────────────────────────────
+docs/build/
+docs/_build/
+
+# ── Custom Project Exclusions ─────────────────────────────────────────────────
+# Add any project-specific files to ignore here
+
+# Ollama model cache (if stored locally)
+.ollama/
+
+# Custom configuration overrides
+config.local.py
+settings.local.py
+
+# Development scripts
+dev_*
+test_*
+debug_*
+scratch_*
+
+# ══════════════════════════════════════════════════════════════════════════════
+# IMPORTANT SECURITY NOTES:
+# 
+# 1. NEVER commit .env files - they contain API keys
+# 2. NEVER commit actual PDF documents - they may contain sensitive legal data
+# 3. NEVER commit extracted JSON - it contains processed sensitive information
+# 4. Review any new files before committing to ensure no secrets are included
+# ══════════════════════════════════════════════════════════════════════════════
